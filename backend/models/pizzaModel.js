@@ -7,7 +7,7 @@ const pizzaSchema=mongoose.Schema({
 
     },
     varients :[],
-    prices:[],
+    prices:[{}],
     image:{
         type:String,
         required:true

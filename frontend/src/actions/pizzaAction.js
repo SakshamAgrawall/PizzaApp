@@ -1,11 +1,11 @@
 import axios from "axios";
 
 
-export const getAllPizzas = () => (dispatch) => {
+export const getAllPizzas = () => async(dispatch) => {
   dispatch({type:"GET_PIZZAS_REQUEST"})
   try{
-    const res = axios.get('/api/pizzas/getpizzas')
-    console.log(res)
+    const res = await axios.get('api/pizzas/getAllPizzas')
+    console.log(res.data)
     dispatch({type:"GET_PIZZAS_SUCCESS",payload:res.data})
   }catch(error){
     dispatch({type:"GET_PIZZAS_FAIL",payload:error})

@@ -17,14 +17,15 @@ const connectDB = async ()=>{
 catch (error) {
     console.log(`error: ${error.message}`);
 }
+}
 
-const refreshAll = async () => {
-    await pizzaModel.deleteMany({});
-    await pizzaModel.insertMany(pizzaData);
-    await mongoose.disconnect();
+const refreshAll = () => {
+     pizzaModel.remove({});
+    pizzaModel.insertMany(pizzaData);
+    mongoose.disconnect()
 }
 refreshAll();
-}
+
 module.exports=connectDB;
 
 
