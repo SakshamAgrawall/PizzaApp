@@ -24,7 +24,7 @@ const Pizza = ({pizza}) => {
          <Row>
             <Col md={6}>
                 <h6>Varients</h6>
-                <select value={varient} onChange={e=> setVarient(e.target.value)}>
+                <select value={varient} style={{cursor:"pointer"}} onChange={e=> setVarient(e.target.value)}>
                     {pizza.varients.map(varient=>(
                         <option  value={varient}>{varient}</option>
                     ))}
@@ -32,7 +32,7 @@ const Pizza = ({pizza}) => {
             </Col>
             <Col md={6}>
                 <h6>Quantity</h6>
-                <select value={quantity}  onChange={e=> setQuantity(e.target.value)}>
+                <select value={quantity} style={{cursor:"pointer"}} onChange={e=> setQuantity(e.target.value)}>
                     {[...Array(10).keys()].map((v,i)=>(
                         <option value={i+1} >{i+1}</option>
                     ))}

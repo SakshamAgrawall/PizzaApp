@@ -1,14 +1,12 @@
-const mongoose = require('mongoose')
-const pizzaModel = require('../models/pizzaModel');
-const pizzaData = require("../data/pizzaData.js");
+const mongoose = require('mongoose');
 const dotenv = require("dotenv");
 dotenv.config();
 
 
-const connectDB = async ()=>{
+const connectDB = ()=>{
     try{
         const url = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/pizzastore"
-        const conn = await mongoose.connect(url,{
+        const conn = mongoose.connect(url,{
             useUnifiedTopology:true,
             useNewUrlParser: true,
         })
@@ -18,13 +16,6 @@ catch (error) {
     console.log(`error: ${error.message}`);
 }
 }
-
-const refreshAll = () => {
-     pizzaModel.remove({});
-    pizzaModel.insertMany(pizzaData);
-    mongoose.disconnect()
-}
-refreshAll();
 
 module.exports=connectDB;
 
