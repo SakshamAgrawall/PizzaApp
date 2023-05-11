@@ -20,9 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 
 //route
 app.use("/api/pizzas",require("./routes/pizzzaRoute"));
-// app.get('/',(req,res)=>{
-//     res.send("<h1>hello</h1>");
-// })
+app.use("/api/users",require("./routes/userRoute"));
 
 app.listen(Port, ()=>{
     console.log(`server in live on port: ${Port}`);

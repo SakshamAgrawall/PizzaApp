@@ -17,7 +17,7 @@ const Pizza = ({pizza}) => {
   return (
     <>
      <Card style={{ width: '18rem', margin:"1rem" }}>
-      <Card.Img variant="top" src={pizza.image} />
+      <Card.Img variant="top" style={{height:"15rem"}} src={pizza.image} />
       <Card.Body>
         <Card.Title>{pizza.name}</Card.Title>
         <Card.Text>
