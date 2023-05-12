@@ -3,7 +3,7 @@ import thunk from "redux-thunk";
 import {getAllPizzaReducer} from "./reducers/pizzaReducer";
 import { cartReducer } from "./reducers/cartReducer";
 import { signUpUserReducer , loginUserReducer } from "./reducers/userReducer";
-import {placeOrderReducer} from "./reducers/orderReducer"
+import {placeOrderReducer,getOrderReducer} from "./reducers/orderReducer"
 
 
 
@@ -16,7 +16,8 @@ const rootReducer = combineReducers({
     cartReducer:cartReducer,
     signUpUserReducer:signUpUserReducer,
     loginUserReducer : loginUserReducer,
-    placeOrderReducer: placeOrderReducer
+    placeOrderReducer: placeOrderReducer,
+    getOrderReducer: getOrderReducer
 });
 
 

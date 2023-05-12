@@ -29,7 +29,9 @@ const NavBar = () => {
                 </LinkContainer>
               {currentUser ? (
                 <NavDropdown title={<FaUserAlt color="white" size={25}></FaUserAlt>}>
-                <NavDropdown.Item href="#action/3.1">Orders</NavDropdown.Item>
+                  <LinkContainer to="/orders">
+                <NavDropdown.Item>Orders</NavDropdown.Item>
+                  </LinkContainer>
                 <NavDropdown.Item onClick={()=>{dispatch(logoutUser())}}>Logout</NavDropdown.Item>
               </NavDropdown>
               ):(

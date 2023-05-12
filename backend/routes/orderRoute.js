@@ -18,9 +18,24 @@ router.post("/orderNow",async(req,res)=>{
     } catch (error) {
         res.status(400).json({
             message:"someting went wrong",
-            error:error
+            error:error.stack
         })
     }
+});
+
+
+router.post("/getuserorders", async(req,res)=>{
+        const {userid} = req.body
+        try {
+            const orders = await Order.find({userid})
+            res.status(200).send(orders)
+        } catch (error) {
+            res.status(400).json({
+                message:"someting went wrong",
+                error:error.stack
+            })
+        }
+
 })
 
 module.exports = router;
