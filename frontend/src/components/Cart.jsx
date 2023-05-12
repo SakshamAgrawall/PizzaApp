@@ -1,8 +1,9 @@
 import React from 'react'
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import {Col, Container, Row } from 'react-bootstrap';
 import { useSelector,useDispatch } from 'react-redux';
 import {AiFillPlusSquare,AiFillMinusSquare,AiFillDelete} from "react-icons/ai";
-import { addTOCart, deleteFromCart } from "../actions/cartAction"
+import { addTOCart, deleteFromCart } from "../actions/cartAction";
+import OrderNow from './orderNow';
 
 const Cart = () => {
     const cartState = useSelector(state=>state.cartReducer);
@@ -42,7 +43,7 @@ const Cart = () => {
                 <h1>Payment Info</h1>
                 <h4>Sub Total</h4>
                 <h4>RS: {subTotal} /-</h4>
-                <Button>Order Now</Button>
+               <OrderNow subTotal={subTotal}/>
             </Col>
         </Row>
     </Container>

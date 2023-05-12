@@ -1,12 +1,18 @@
 import React from "react";
-import { Navbar, Nav, Container} from "react-bootstrap";
+import { Navbar, Nav,NavDropdown, Container} from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import {GiFullPizza} from "react-icons/gi"
 import { useDispatch,useSelector } from "react-redux";
+import {FaUserAlt,FaHome,FaShoppingCart} from "react-icons/fa"
+import {MdLogin} from "react-icons/md";
+import {logoutUser} from "../actions/userAction"
 
 const NavBar = () => {
-  const dispatch=useDispatch()
+  const dispatch=useDispatch();
   const cartState = useSelector((state)=>state.cartReducer);
+  const userState = useSelector((state)=> state.loginUserReducer);
+
+  const {currentUser} = userState;
   return (
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -19,13 +25,19 @@ const NavBar = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">
               <LinkContainer to="/">
-                <Nav.Link>Home</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/login">
-                <Nav.Link>Login</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/Cart">
-                <Nav.Link>Cart{cartState.cartItems.length}</Nav.Link>
+                <Nav.Link><FaHome color="white" size={25}></FaHome></Nav.Link>
+                </LinkContainer>
+              {currentUser ? (
+                <NavDropdown title={<FaUserAlt color="white" size={25}></FaUserAlt>}>
+                <NavDropdown.Item href="#action/3.1">Orders</NavDropdown.Item>
+                <NavDropdown.Item onClick={()=>{dispatch(logoutUser())}}>Logout</NavDropdown.Item>
+              </NavDropdown>
+              ):(
+                <LinkContainer to="/login">
+                <Nav.Link><MdLogin color="white" size={25}></MdLogin></Nav.Link>
+              </LinkContainer>)
+              }<LinkContainer to="/Cart">
+                <Nav.Link><FaShoppingCart color="white" size={25}></FaShoppingCart>{cartState.cartItems.length}</Nav.Link>
               </LinkContainer>
             </Nav>
           </Navbar.Collapse>
