@@ -24,7 +24,7 @@ router.post("/orderNow",async(req,res)=>{
 });
 
 
-router.post("/getuserorders", async(req,res)=>{
+router.post("/getorders", async(req,res)=>{
         const {userid} = req.body
         try {
             const orders = await Order.find({userid})

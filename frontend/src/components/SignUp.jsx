@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Form,Button,Container } from 'react-bootstrap';
-import {useDispatch,useSelector }  from 'react-redux';
+import {useDispatch}  from 'react-redux';
 import {signUpUser} from "../actions/userAction";
 const SignUp = () => {
   const [name,setName]=useState('')
@@ -22,6 +22,7 @@ const dispatch = useDispatch()
       setPassword("")
       setConfirmPassword("")
       alert("signUp Success");
+      window.location.href = "/login"
 
     }
   }

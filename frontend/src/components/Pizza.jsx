@@ -26,7 +26,7 @@ const Pizza = ({pizza}) => {
                 <h6>Varients</h6>
                 <select value={varient} style={{cursor:"pointer"}} onChange={e=> setVarient(e.target.value)}>
                     {pizza.varients.map(varient=>(
-                        <option  value={varient}>{varient}</option>
+                        <option value={varient}>{varient}</option>
                     ))}
                 </select>
             </Col>

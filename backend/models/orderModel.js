@@ -16,6 +16,6 @@ const orderSchema=mongoose.Schema({
     orderAmount:{
         type:String
     },
-},{timeTamps:true});
+},{timesTamps:true});
 
 module.exports = mongoose.model('orders',orderSchema)

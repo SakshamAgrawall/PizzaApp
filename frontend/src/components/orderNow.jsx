@@ -8,7 +8,7 @@ const OrderNow = ({subTotal}) => {
     
     const orderHandler = ()=>{
         dispatch(placeOrder(subTotal));
-        alert("order placed successfull")
+        alert("order placed successfull");
     }
   return (
     <Button onClick={orderHandler}>Order Now</Button>

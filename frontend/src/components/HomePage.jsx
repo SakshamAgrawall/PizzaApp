@@ -22,8 +22,8 @@ const HomePage = () => {
                 :(
         <Row>
           {pizzas.map((pizza) => (
-            <Col md={4} key={pizza.name}>
-              <Pizza pizza={pizza} />
+            <Col md={4} key={pizza._id}>
+              <Pizza pizza={pizza} key={pizza.name} />
             </Col>
           ))}
         </Row>

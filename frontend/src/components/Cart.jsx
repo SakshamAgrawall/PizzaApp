@@ -20,7 +20,7 @@ const Cart = () => {
                     {
                         cartItems.map(item=>(
                             <>
-                            <Col md={7}>
+                            <Col md={7} key={item._id}>
                             <h5>{item.name} [{item.varient}]</h5>
                              <h6>price: {item.quantity} X {item.prices[0][item.varient]} = {" "} {item.price}</h6><br/>
                              <h6> Quantity:&nbsp;
