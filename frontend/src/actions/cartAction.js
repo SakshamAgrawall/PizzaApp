@@ -1,5 +1,4 @@
 export const addTOCart = (pizza,quantity,varient) =>(dispatch,getState)=> {
-
     let cartItem = {
         name:pizza.name,
         _id: pizza._id,
@@ -7,7 +6,7 @@ export const addTOCart = (pizza,quantity,varient) =>(dispatch,getState)=> {
         varient:varient,
         quantity:Number(quantity),
         prices:pizza.prices,
-        price: pizza.prices[0][varient]*quantity
+        price: pizza.prices[0][varient]*quantity,
     };
     if(cartItem.quantity>10){
         alert("maximum limit excceed");
@@ -19,14 +18,15 @@ export const addTOCart = (pizza,quantity,varient) =>(dispatch,getState)=> {
         else
         {
             dispatch({type:"ADD_TO_CART",payload:cartItem});
-            localStorage.setItem('cartItems',JSON.stringify(getState().cartReducer.cartItems))
+            localStorage.setItem('cartItems',JSON.stringify(getState().cartReducer.cartItems)
+            );
         }
     }
 
 };
 
 export const deleteFromCart = (pizza)=>(dispatch,getState)=>{
+    dispatch({type:"DELETE_FROM_CART",payload:pizza});
     const cartItems = getState().cartReducer.cartItems;
-    dispatch({type:"DELETE_FROM_CART",payload:pizza})
     localStorage.setItem("cartItems",JSON.stringify(cartItems));
 }

@@ -20,7 +20,6 @@ dispatch({
 })
 try {
     const response = await axios.post('/api/orders/getorders',{userid:currentUser._id})
-    console.log(response.data)
     dispatch({type:"USER_ORDER_SUCCESS",payload:response.data})
 } catch (error) {
     dispatch({type:"USER_ORDER_ERROR",payload:error})

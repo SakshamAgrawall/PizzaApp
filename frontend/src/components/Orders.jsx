@@ -19,7 +19,7 @@ const Orders = () => {
           <Row>
             <Col md={4}>
             {order.orderItems.map(item=>(
-                <h5 key={item.name}>{item.name} [{item.varient}] X {item.quantity} = {item.price}</h5>
+                <h5>{item.name} [{item.varient}] X {item.quantity} = {item.price}</h5>
                 ))
               }
             </Col>

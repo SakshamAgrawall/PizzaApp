@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Form,Button,Container } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
+import { Form,Button,Container,Nav} from 'react-bootstrap';
 import {useDispatch}  from 'react-redux';
 import {signUpUser} from "../actions/userAction";
 const SignUp = () => {
@@ -51,6 +52,12 @@ const dispatch = useDispatch()
       <div className="d-grid gap-2">
       <Button variant="primary" size="lg" onClick={signUpHandler}>
         Signup
+      </Button>
+      <p>Already have an Account?</p>
+      <Button variant="secondary" size="lg">
+      <LinkContainer to="/login">
+                <Nav.Link>Login</Nav.Link>
+                </LinkContainer>
       </Button>
       </div>
     </Form>

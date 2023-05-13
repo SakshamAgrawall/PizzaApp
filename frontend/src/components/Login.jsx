@@ -38,6 +38,7 @@ if(localStorage.getItem("currentUser")){
       <Button variant="primary" size="lg" onClick={loginHandler}>
         Login
       </Button>
+      <p>New User ?</p>
       <Button variant="secondary" size="lg">
       <LinkContainer to="/signup">
                 <Nav.Link>Signup</Nav.Link>
