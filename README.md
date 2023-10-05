@@ -57,6 +57,3 @@ npm run server
 
 ## 🛠 Skills
  HTML  | BootStrap | JavaScript | ReactJs | Express | MongoDB | nodejs
- 
-## NOTE 
- This Project is a Assigenement given by Wishflux for Better understanding and learning
