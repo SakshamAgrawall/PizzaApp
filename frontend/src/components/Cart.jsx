@@ -8,6 +8,8 @@ import OrderNow from './orderNow';
 const Cart = () => {
     const cartState = useSelector(state=>state.cartReducer);
     const cartItems = cartState.cartItems;
+hello
+
     const dispatch = useDispatch();
     const subTotal = cartItems.reduce((x,item)=>x+item.price,0)
   return (
